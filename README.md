@@ -12,6 +12,7 @@ uvicorn app.main:app --reload
 
 This will start the FastAPI server, and you can access the endpoint:
 
+test.http file: 
 
 POST https://testgenfn.azurewebsites.net/api/prinfo HTTP/1.1
 Content-Type: application/json
