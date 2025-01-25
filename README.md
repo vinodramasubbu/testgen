@@ -4,6 +4,22 @@ To run this FastAPI application, you need to install FastAPI and an ASGI server 
 
 Then, install the dependencies using pip:
 
+pip install -r requirements.txt
+
 Finally, run the FastAPI application using uvicorn:
 
-This will start the FastAPI server, and you can access the endpoint at http://127.0.0.1:8000/calculate?operator=add&num1=10&num2=5 to perform calculations.
+uvicorn app.main:app --reload
+
+This will start the FastAPI server, and you can access the endpoint:
+
+
+POST https://testgenfn.azurewebsites.net/api/prinfo HTTP/1.1
+Content-Type: application/json
+
+{
+    "operator": "subtract",
+    "numbers": [10, 5]
+}
+
+
+
