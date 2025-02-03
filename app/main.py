@@ -12,6 +12,8 @@ class CalculationRequest(BaseModel):
 def calculate(request: CalculationRequest):
     operator = request.operator
     numbers = request.numbers
+    print(operator)
+    print(numbers)
 
     if len(numbers) != 2:
         raise HTTPException(status_code=400, detail="Exactly two numbers are required.")
@@ -28,5 +30,7 @@ def calculate(request: CalculationRequest):
         result = numbers[0] / numbers[1]
     else:
         raise HTTPException(status_code=400, detail="Invalid operator.")
+
+    print(result)
 
     return {"result": result}
